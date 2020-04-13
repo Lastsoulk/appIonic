@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!isRegister">
+    <img src="assets/img/signin.png" class="icon">
+    <br><br>
+    <ion-item>
+      <ion-label position="floating">Nombre:</ion-label>
+      <ion-input type="text" name="nombre" [(ngModel)]="form.nombre"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario:</ion-label>
+      <ion-input type="text" name="nombreUsuario" [(ngModel)]="form.nombreUsuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input type="text" name="email" [(ngModel)]="form.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña:</ion-label>
+      <ion-input type="password" name="password" [(ngModel)]="form.password"></ion-input>
+    </ion-item>
+    <br><br>
+    <ion-button expand="full" (click)="onRegister()" color="tertiary">Crear Cuenta</ion-button>
+  </div>
+  <div *ngIf="isRegister">
+    <ion-item>
+      <ion-label>Cuenta Creada</ion-label>
+    </ion-item>
+  </div>
+  <br>
+
+
+</ion-content>

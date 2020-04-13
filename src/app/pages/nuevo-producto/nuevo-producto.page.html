@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nuevo Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Nombre:</ion-label>
+    <ion-input type="text" name="nombreProducto" [(ngModel)]="form.nombreProducto"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Precio:</ion-label>
+    <ion-input type="number" name="precio" [(ngModel)]="form.precio"></ion-input>
+  </ion-item>
+  <br><br>
+  <ion-button expand="full" color="success" (click)="onCreate()">Crear</ion-button>
+</ion-content>

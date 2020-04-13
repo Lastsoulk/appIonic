@@ -1,0 +1,7 @@
+{
+  "name": "angularjwt",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

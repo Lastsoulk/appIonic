@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Panel del Administrador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col><b>Nombre:</b></ion-col>
+      <ion-col><b>Ver</b></ion-col>
+      <ion-col><b>Editar</b></ion-col>
+      <ion-col><b>Borrar</b></ion-col>
+    </ion-row>
+    <hr>
+    <ion-row *ngFor="let producto of productos" align-items-center>
+      <ion-col>{{producto.nombreProducto}}</ion-col>
+      <ion-col><ion-button color="primary" size="small" [routerLink]="['/', 'detalle', producto.id]"><ion-icon name="eye"></ion-icon></ion-button></ion-col>
+      <ion-col><ion-button color="warning" size="small" [routerLink]="['/', 'editar', producto.id]"><ion-icon name="create"></ion-icon></ion-button></ion-col>
+      <ion-col><ion-button color="danger" size="small" (click)="presentAlertConfirm(producto.id)"><ion-icon name="trash"></ion-icon></ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+  <hr>
+  <ion-button expand="full" color="success" routerLink="/nuevo">Nuevo Producto</ion-button>
+</ion-content>

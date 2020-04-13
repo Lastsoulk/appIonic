@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngIf="producto">
+    <ion-item>
+      <ion-label><b>Nombre: </b>{{producto.nombreProducto}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label><b>Precio: </b>{{producto.precio}}€</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
